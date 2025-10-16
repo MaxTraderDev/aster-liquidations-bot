@@ -1,0 +1,4 @@
+python-telegram-bot==20.7
+websockets==11.0.3
+aiohttp==3.9.1
+python-dotenv===1.1.1

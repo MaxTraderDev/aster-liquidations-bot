@@ -1,0 +1,16 @@
+services:
+  bybit-bot:
+    build: .
+    container_name: bybit-liquidation-bot
+    restart: unless-stopped
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
+      - MIN_LIQUIDATION_SIZE=${MIN_LIQUIDATION_SIZE:-1000}
+    volumes:
+      - ./.env:/app/.env:ro
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
