@@ -1,7 +1,7 @@
 services:
-  bybit-bot:
+  aster-bot:  
     build: .
-    container_name: bybit-liquidation-bot
+    container_name: aster-liquidation-bot
     restart: unless-stopped
     environment:
       - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
